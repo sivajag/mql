@@ -1,4 +1,8 @@
+*~
+.DS_Store
+config/.DS_Store
 pom.xml
 *jar
 lib
 classes
+local
