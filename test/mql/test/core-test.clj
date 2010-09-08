@@ -7,7 +7,7 @@
       {
        :visits {
                 :id-1 {
-                       :last-ts "1274166000040"
+                       :last-ts "1284166000040"
                        :first-ts "1274166000000"
                        :duration "40"}
                 :id-2 {
@@ -15,7 +15,7 @@
                        :first-ts "1274166000000"
                        :duration "40"}
                 :id-3 {
-                       :last-ts "1274166000040"
+                       :last-ts "1264166000040"
                        :first-ts "1274166000000"
                        :duration "40"}}
        
@@ -57,6 +57,7 @@
                                    :id-2 {:promo "p1"}})))
 
 (deftest test-select-with-where
-  (is (= (keys (select [:cid :purchase] (where [* :total-dollars] :gt 980) m)) [:id-3])))
+  (is (= (keys (select [:cid :purchase] (where [* :total-dollars] :gt 980) m)) [:id-3]))
+  (is (= (keys (select [:cid :visits] (where [* :last-ts] :ge 1274166000001) m)) [:id-1 :id-2])))
 
 

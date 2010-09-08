@@ -27,7 +27,7 @@
       (recur (key-seq-copy ks (nks m (first ks) k)) (first rkys) (rest rkys)))))
 
 (defn valid-for-one? [mh key-seq ops-fn v]
-  (if (not= "$$NOT$$" (get-in mh key-seq "$$NOT$$"))
+  (if (not (nil? (get-in mh key-seq)))
     (ops-fn (read-string (get-in mh key-seq)) v)))
 
 (defn valid? [me key-seqs ops-fn v]
