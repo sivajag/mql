@@ -43,14 +43,18 @@ Given a map
 
 ## Select: simple select
 
-   (select [:cid :promo] m)  
+           (select [:cid :promo] m)  
+
    will return         
+
            {:id-1 {:promo "p2"} :id-2 {:promo "p1"}} 
 
 ## Select: with filtering
 
-   (select [:cid :purchase] (where [* :total-dollars] :gt 980) m) 
+          (select [:cid :purchase] (where [* :total-dollars] :gt 980) m) 
+
    will return
+
           {:id-1
               {:order-id "order-id-1"
                :total-dollars "970.00"
